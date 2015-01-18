@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+
+  "name": "EPiServer publish with arduino",
+  "description": "Gets publish command from Arduino",
+  "version": "1.0",
+  "background" : {"page" : "background.html"},
+  "page_action" :
+  {
+	"default_icon" : "icon.png",
+	"default_title" : "published done"
+  },
+  "plugins": [
+    { 
+		"path": "npjUART.dll"
+	}
+  ],
+  "content_scripts" : [
+	{
+		"matches" : [
+			"http://*/*"
+		],
+		"js" : ["contentscript.js"]
+	}
+  ]
+}
